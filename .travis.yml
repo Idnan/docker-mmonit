@@ -1,0 +1,9 @@
+services:
+  - docker
+
+install:
+  - docker build -t mmonit .
+  - docker run -d -p 127.0.0.1:8080:8080 --name mmonit mmonit
+
+script:
+  - docker ps | grep -q mmonit
